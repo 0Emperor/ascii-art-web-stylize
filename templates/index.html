@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/style.css">
+    <title>ascii-art-web</title>
+</head>
+<body class="back">
+  <form action="/ascii-art" method="POST">
+    <h1 ><i>ASCII - ART - WEB</i> </h1>
+    <hr>
+  <br> 
+  
+  <label for="text" >Input text u want ASCII GRAPH for here:</label>
+  <label for="text" style="color: red;" title="Only Printable ASCII Characters are accepted, ans less than 500 Characters">*</label>
+  <br>  
+  <textarea style="resize: none;" name="text" value="text" cols="75" rows="15" maxlength="500" required></textarea>
+   <br>
+    <p>choose your desired template:</p>
+    <label for="template">Standard</label>
+    <input type="radio" id="standard" value="standard" name="template" checked><br>
+    <label for="template">thinkertoy</label>
+    <input type="radio" id="thinkertoy"  value="thinkertoy" name="template"><br>
+    <label for="template">shadow</label>
+    <input for="shadow"type="radio" id="shadow"  value="shadow" name="template"><br>
+    <br>
+    <button type="submit">submit</button>
+   <br>
+  </form>
+  
+  {{if .Result}}
+  <h2>Ascii Art Result: </h2>
+  <pre align="left">{{.Result}}</pre>
+  {{end}}
+</body>
+</html>
